@@ -1,0 +1,272 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>MicroJobs</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../images/fav-icon.png" />
+
+    <!-- Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- custome Stylesheets -->
+    <link type="text/css" href="css/style.css" rel="stylesheet">
+    <link href="css/jquery.range.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.css">
+    <link type="text/css" href="css/animate.min.css" rel="stylesheet">
+    <link type="text/css" href="css/bootstrap-select.min.css" rel="stylesheet">
+    <link href="assets/css/buttons.css" rel="stylesheet" />
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+    <style>
+           .mCustomScrollbar {
+    overflow-x: hidden;
+}
+        ul.task-list {
+            height:600px
+        }
+
+        .icon-cntnr > img {
+            width: 50px;
+        }
+              
+    </style>
+</head>
+<body ng-app="TaskNinjaApp">
+
+    <!-- Toaster status: info, wait, error, success, warning -->
+    <toaster-container toaster-options="{'time-out': 3000, 'close-button':true}"></toaster-container>
+
+    <!-- Header -->
+    <div ng-include="'View/nav.html'"></div>
+    <!-- Header Ends -->
+    <!-- bodypar start -->
+
+    <div class="">
+        <div ng-view=""></div>
+    </div>
+
+    <!--<div ng-include="'View/bodypart.html'"></div>-->
+    <!-- bodypart end -->
+    <!-- ==== Second Footer starts ==== -->
+
+    <div class="container-fluid second-footer cmn-container noPadd">
+        <div class="container">
+            <div class="row cmn-content text-center">
+
+                <!-- one-third -->
+                <div class="col-xs-5 col-sm-3 col-md-3 col-lg-3 ftr-resp-sec">
+                    <div class="row text-left footer-sec cmn-sec">
+                        <h4>Quick <strong>Links</strong></h4>
+                        <ul class="footer-links">
+                            <li><a href="javascript:void(0)">About us</a></li>
+                            <li><a href="javascript:void(0)">Privacy Policy</a></li>
+                            <li><a href="javascript:void(0)">Terms & Conditions</a></li>
+                            <li><a href="javascript:void(0)">FAQ’s</a></li>
+                            <li><a href="javascript:void(0)">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- one-third Ends -->
+                <!-- one-third -->
+                <div class="col-xs-7 col-sm-5 col-md-5 col-lg-5 ftr-resp-sec">
+                    <div class="row text-left footer-sec cmn-sec">
+                        <h4>Our <strong>Categories</strong></h4>
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 ftr-links-half noPadd">
+                            <ul class="footer-links">
+                                <li><a href="javascript:void(0)">Handyman Services</a></li>
+                                <li><a href="javascript:void(0)">House Cleaning</a></li>
+                                <li><a href="javascript:void(0)">Pickup & Delivery</a></li>
+                                <li><a href="javascript:void(0)">Furniture Assembly</a></li>
+                                <li><a href="javascript:void(0)">Computer & IT Support</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 ftr-links-half noPadd">
+                            <ul class="footer-links">
+                                <li><a href="javascript:void(0)">Flyer Delivery</a></li>
+                                <li><a href="javascript:void(0)">Moving & Removalist</a></li>
+                                <li><a href="javascript:void(0)">Garden Maintenance</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- one-third Ends -->
+                <!-- one-third -->
+                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 ftr-resp-sec">
+                    <div class="row text-left footer-sec cmn-sec">
+                        <h4>Subscribe to our <strong>Newsletter</strong></h4>
+                        <p>You’ll get an email about once a month. We'll never share your address.</p>
+                        <div class="co-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="row">
+                                <div class="input-group ftr-search">
+                                    <input type="text" class="form-control" placeholder="Yourmail@email.com" style="height:48px">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-primary" type="subtmit">Subscribe</button>
+                                    </span>
+                                </div>
+                                <!-- /input-group -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- one-third Ends -->
+
+            </div>
+        </div>
+    </div>
+
+    <!-- ==== Second Footer Ends ==== -->
+    <!-- ====== Footer ====== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 social-links text-center noPadd">
+                    <ul>
+                        <li><a class="social fb" href="javascript:void(0)"></a></li>
+                        <li><a class="social tw" href="javascript:void(0)"></a></li>
+                        <li><a class="social in" href="javascript:void(0)"></a></li>
+                    </ul>
+                </div>
+                <p class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center noPadd">© Copyright 2015 Microjob | All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+    <!-- ====== Footer ====== -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <script src="js/wow.js"></script>
+    <script src="js/bootstrap-select.min.js"></script>
+    <script src="js/jquery.range.js"></script>
+    <script src="js/responsive-tabs.js"></script>
+    <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+
+
+    <!-- Animation Wow Script -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular-animate.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular-resource.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular-route.js"></script>
+    <script src="js/angular-cookies.js"></script>
+    <script src="https://cdn.firebase.com/js/client/2.1.0/firebase.js"></script>
+    <script src="https://cdn.firebase.com/libs/angularfire/0.9.1/angularfire.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angularjs-toaster/0.4.9/toaster.js"></script>
+    <script src="../scripts/lib/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-moment/0.9.0/angular-moment.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.1/js/material.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.1/js/ripples.js"></script>
+
+
+
+    <script src="../scripts/app.js"></script>
+    <script src="../scripts/services/auth.js"></script>
+    <script src="../scripts/services/task.js"></script>
+    <script src="../scripts/services/comment.js"></script>
+    <script src="../scripts/services/offer.js"></script>
+    <script src="../scripts/services/dashboard.js"></script>
+    <script src="../scripts/controllers/nav.js"></script>
+    <script src="../scripts/controllers/task.js"></script>
+    <script src="../scripts/controllers/auth.js"></script>
+    <script src="../scripts/controllers/browse.js"></script>
+    <script src="../scripts/controllers/dashboard.js"></script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=places"></script>
+    <script src="scripts/map/Mapfrom.js"></script>
+
+</body>
+</html>
+<script>
+    $(document).ready(function () {
+        $.material.init();
+    });
+</script>
+
+<script>
+    
+
+    var wow = new WOW(
+    {
+        offset: 150,
+        callback: function (box) {
+            // the callback is fired every time an animation is started
+            // the argument that is passed in is the DOM node being animated
+        },
+        scrollContainer: null // optional scroll container selector, otherwise use window
+    }
+);
+    wow.init();
+</script>
+<!-- Animation Wow Script Ends -->
+
+<script>
+    (function ($) {
+        $(window).load(function () {
+            $(".my-sroll").mCustomScrollbar({
+                theme: "minimal-dark"
+            });
+        });
+    })(jQuery);
+</script>
+
+
+<!--Content Section Ends-->
+<script>
+    $('.selectpicker').selectpicker();
+</script>
+<!--Animation Wow Script Ends-->
+<script>
+    $('.range-slider').jRange({
+        from: 50,
+        to: 1000,
+        format: 'CHF %s',
+        step: 50,
+        isRange: true,
+        showScale: false
+    });
+</script>
+
+<!--SelectPiker Ends-->
+<!--Range Slider Price-->
+<script>
+    $('.dstnc-rang-slider').jRange({
+        from: 10,
+        to: 100,
+        format: '%s km',
+        step: 05,
+        isRange: true,
+        showScale: false
+    });
+</script>
+
+<!--Range Slider Price Ends-->
+<!--Range Slider distance-->
+<script type="text/javascript">
+    (function ($) {
+        fakewaffle.responsiveTabs(['xs', 'sm']);
+    })(jQuery);
+</script>
+<script>
+    $('#collapse-myTab').find('.panel-default:has(".in")').addClass('panel-down');
+
+    $('#collapse-myTab').on('shown.bs.collapse', function (e) {
+        $(e.target).closest('.panel-default').addClass(' panel-down');
+    }).on('hidden.bs.collapse', function (e) {
+        $(e.target).closest('.panel-default').removeClass(' panel-down');
+    })
+
+
+    
+</script>
