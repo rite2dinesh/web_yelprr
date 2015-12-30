@@ -13,9 +13,8 @@ app.controller('BrowseController', function ($scope, $routeParams, toaster, Task
 		var task = Task.getTask($routeParams.taskId).$asObject();
 		$scope.listMode = false;
 		setSelectedTask(task);
-		debugger;
-		$('#' + $routeParams.taskId).css("background-color", "red");
-		$scope.afterVal = $routeParams.taskId;
+		//$('#' + $routeParams.taskId).css("background-color", "red");
+		//$scope.afterVal = $routeParams.taskId;
 	}
 
 	
@@ -172,17 +171,22 @@ app.controller('BrowseController', function ($scope, $routeParams, toaster, Task
 	    $("#tabpan-03").removeClass("active");
 	    $("#tabpan-04").addClass("active");
 	}
-	$("#" + $scope.afterVal).css("background-color", "red");
-	alert($scope.afterVal);
+	//$("#" + $scope.afterVal).css("background-color", "red");
+	//alert($scope.afterVal);
 
 });
 
-app.directive('myPostRepeatDirective', function () {
-    return function (scope, element, attrs) {
-        if (scope.$last) {
-            // iteration is complete, do whatever post-processing
-            // is necessary
-            element.parent().css('border', '1px solid black');
+app.directive('onFinishRender', function ($timeout) {
+        return {
+            restrict: 'A',
+            link: function (scope, element, attr) {
+                if (scope.$last === true) {
+                    $timeout(function () {
+                        scope.$emit('ngRepeatFinished');
+                        var id=$("#hdnId").val();
+                        $("#" + id).addClass('active');
+                    });
+                }
+            }
         }
-    };
-});
+    });

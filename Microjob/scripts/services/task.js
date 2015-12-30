@@ -82,5 +82,4 @@ app.factory('Task', function (FURL, $firebase, Auth) {
     };
 
     return Task;
-
 });

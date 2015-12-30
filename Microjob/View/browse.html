@@ -68,7 +68,7 @@
                                     </li>-->
 
 
-                                    <li ng-repeat="task in tasks | filter: {title: searchTask , status: '!cancelled'} | orderBy: 'datetime':true" id="{{task.$id}}">
+                                    <li ng-repeat="task in tasks | filter: {title: searchTask , status: '!cancelled'} | orderBy: 'datetime':true" id="{{task.$id}}" on-finish-render="ngRepeatFinished">
                                         <a ng-href="#/browse/{{task.$id}}">
                                             <span class="icon-cntnr"><img ng-src="{{task.gravatar}}" alt="image" /></span>
 
@@ -92,145 +92,145 @@
             </div>
             <!-- Left Section Ends -->
             <!-- Right Section Starts -->
+                <div id="task-detail" class="col-xs-12 col-sm-7 col-md-7 col-lg-7" ng-show="!listMode">
+                    <div class="row">
 
-
-            <div id="task-detail" class="col-xs-12 col-sm-7 col-md-7 col-lg-7" ng-show="!listMode">
-                <div class="row">
-
-                    <!-- Header -->
-                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 task-dtail-head">
-                        <div class="row noMarg">
-                            <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 tsk-dtl">
-                                <div class="row">
-                                    <h1>{{ selectedTask.title }}</h1>
-                                    <input type="text" value="{{selectedTask.$id}}" style="display:none" id="hdnId" />
-                                    <span class="loctn-icon">Location</span> <span class="urgent tsk-tim">{{ selectedTask.status }}</span>
+                        <!-- Header -->
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 task-dtail-head">
+                            <div class="row noMarg">
+                                <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 tsk-dtl">
+                                    <div class="row">
+                                        <h1>{{ selectedTask.title }}</h1>
+                                        <input type="text" value="{{selectedTask.$id}}" style="display:none" id="hdnId" />
+                                        <span class="loctn-icon">Location</span> <span class="urgent tsk-tim">{{ selectedTask.status }}</span>
+                                    </div>
                                 </div>
-                            </div>
-                            <!-- === -->
-                            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 task-action text-right">
-                                <div class="row">
-                                    <span class="price"><span style="font-size: 18px; font-weight: 500; margin-right: -8px;">CHF</span> {{ selectedTask.total }}</span>
-                                    <button type="submit" class="btn btn-default cmn-btn grn-btn"><span>Apply For This Task</span></button>
+                                <!-- === -->
+                                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 task-action text-right">
+                                    <div class="row">
+                                        <span class="price"><span style="font-size: 18px; font-weight: 500; margin-right: -8px;">CHF</span> {{ selectedTask.total }}</span>
+                                        <button type="submit" class="btn btn-default cmn-btn grn-btn"><span>Apply For This Task</span></button>
+                                    </div>
                                 </div>
+                                <!-- === -->
                             </div>
-                            <!-- === -->
                         </div>
-                    </div>
-                    <!-- Header Ends -->
-                    <!-- Google Map -->
-                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 map-area">
-                        <!--<div class="row">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26503.84678002691!2d151.1568289965733!3d-33.86438446206009!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12afc60e51736d%3A0x5017d681632c9a0!2sRozelle+NSW%2C+Australia!5e0!3m2!1sen!2sin!4v1449817172853" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-                        </div>-->
-                    </div>
-                    <!-- Google Map Ends -->
-                    <!-- Tabs Section Starts -->
-                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 Tab-sec cmn-tabs">
-                        <div class="row">
-                            <!-- Nav tabs -->
-                            <ul id="myTab" class="nav nav-tabs tsk-tabs responsive" role="tablist">
-                                <li role="presentation" class="active tsk-info" ng-click="fntab1()"><a class="cmn-tab-lnk lnk-01" aria-controls="tabpan-01" role="tab" data-toggle="tab">Task Info</a></li>
-                                <li role="presentation" class="tsk-offre" ng-click="fntab2()"><a class="cmn-tab-lnk lnk-02" aria-controls="tabpan-02" role="tab" data-toggle="tab">Offers</a></li>
-                                <li role="presentation" class="tsk-actvy" ng-click="fntab3()"><a class="cmn-tab-lnk lnk-03" aria-controls="tabpan-03" role="tab" data-toggle="tab">Comments</a></li>
-                                <li role="presentation" class="tsk-reprt" ng-click="fntab4()"><a class="cmn-tab-lnk lnk-04" aria-controls="tabpan-04" role="tab" data-toggle="tab">Map</a></li>
-                            </ul>
-
-                            <!-- Tab panes -->
-                            <div class="tab-content responsive my-tabs">
-                                <div role="tabpanel" class="tab-pane active" id="tabpan-01">
-                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 tab-row">
-                                        <div class="row noMarg">
-                                            <!-- === -->
-                                            <div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
-                                                <div class="row"> <span class="info-title">Posted By</span> </div>
-                                            </div>
-                                            <div class="col-xs-12 col-sm-9 col-md-10 col-lg-10">
-                                                <div class="row"> <strong>{{selectedTask.name}}</strong> </div>
-                                            </div>
-                                            <!-- === -->
-                                        </div>
-                                    </div>
-                                    <!-- =========================== -->
-                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 tab-row">
-                                        <div class="row noMarg">
-                                            <!-- === -->
-                                            <div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
-                                                <div class="row"> <span class="info-title">Description</span> </div>
-                                            </div>
-                                            <div class="col-xs-12 col-sm-9 col-md-10 col-lg-10">
-                                                <div class="row">
-                                                    <p> {{ selectedTask.description }}</p>
-                                                </div>
-                                            </div>
-                                            <!-- === -->
-                                        </div>
-                                    </div>
-                                    <!-- =========================== -->
-                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 tab-row">
-                                        <div class="row noMarg">
-                                            <!-- === -->
-                                            <div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
-                                                <div class="row"> <span class="info-title">Location</span> </div>
-                                            </div>
-                                            <div class="col-xs-12 col-sm-9 col-md-10 col-lg-10">
-                                                <div class="row">
-                                                    <p> Location</p>
-                                                </div>
-                                            </div>
-                                            <!-- === -->
-                                        </div>
-                                    </div>
-                                    <!-- =========================== -->
-                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 tab-row">
-                                        <div class="row noMarg">
-                                            <!-- === -->
-                                            <div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
-                                                <div class="row"> <span class="info-title">Deadline</span> </div>
-                                            </div>
-                                            <div class="col-xs-12 col-sm-9 col-md-10 col-lg-10">
-                                                <div class="row"> <strong>1 Day</strong> </div>
-                                            </div>
-                                            <!-- === -->
-                                        </div>
-                                    </div>
-                                </div>
-                                <div role="tabpanel" class="tab-pane" id="tabpan-02">
-                                    <div class="title" ng-hide="offers && offers.length > 0">
-                                        <span>NO OFFER FOR THIS TASK YET</span>
-                                    </div>
-                                    <div class="row" ng-repeat="offer in offers">
-                                        <div class="col-md-10">
-                                            <button ng-show="offer.accepted" class="btn btn-success btn-xs disabled">Assigned</button>
-
-                                            <button ng-show="isTaskCreator(selectedTask) && isOpen(selectedTask)" class="btn btn-info btn-xs" ng-click="acceptOffer(offer.$id,offer.uid)">Accept - ${{offer.total}}</button>
-                                            <button ng-show="isOfferMaker(offer) && isOpen(selectedTask)" class="btn btn-danger btn-xs" ng-click="cancelOffer(offer.$id)">Cancel My Offer - ${{offer.total}}</button>
-                                            <img ng-src="{{offer.gravatar}}" class="img-circle offer gravatar">
-                                            <span>{{offer.name}}</span>
-                                        </div>
-                                    </div><br>
-                                </div>
-                                <div role="tabpanel" class="tab-pane" id="tabpan-03">
-                                    <!-- COMMENTS -->
-                                    Comment
-                                </div>
-                                <div role="tabpanel" class="tab-pane" id="tabpan-04">
-                                    <!-- Google Map -->
-                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 map-area">
-                                        <div class="row">
-                                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26503.84678002691!2d151.1568289965733!3d-33.86438446206009!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12afc60e51736d%3A0x5017d681632c9a0!2sRozelle+NSW%2C+Australia!5e0!3m2!1sen!2sin!4v1449817172853" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-                                        </div>
-                                    </div>
-                                    <!-- Google Map Ends -->
-                                </div>
-                            </div>
-                            <!-- Tab panes Ends -->
+                        <!-- Header Ends -->
+                        <!-- Google Map -->
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 map-area">
+                            <!--<div class="row">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26503.84678002691!2d151.1568289965733!3d-33.86438446206009!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12afc60e51736d%3A0x5017d681632c9a0!2sRozelle+NSW%2C+Australia!5e0!3m2!1sen!2sin!4v1449817172853" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>-->
                         </div>
-                    </div>
-                    <!-- Tabs Section Ends -->
+                        <!-- Google Map Ends -->
+                        <!-- Tabs Section Starts -->
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 Tab-sec cmn-tabs">
+                            <div class="row">
+                                <!-- Nav tabs -->
+                                <ul id="myTab" class="nav nav-tabs tsk-tabs responsive" role="tablist">
+                                    <li role="presentation" class="active tsk-info" ng-click="fntab1()"><a class="cmn-tab-lnk lnk-01" aria-controls="tabpan-01" role="tab" data-toggle="tab">Task Info</a></li>
+                                    <li role="presentation" class="tsk-offre" ng-click="fntab2()"><a class="cmn-tab-lnk lnk-02" aria-controls="tabpan-02" role="tab" data-toggle="tab">Offers</a></li>
+                                    <li role="presentation" class="tsk-actvy" ng-click="fntab3()"><a class="cmn-tab-lnk lnk-03" aria-controls="tabpan-03" role="tab" data-toggle="tab">Comments</a></li>
+                                    <li role="presentation" class="tsk-reprt" ng-click="fntab4()"><a class="cmn-tab-lnk lnk-04" aria-controls="tabpan-04" role="tab" data-toggle="tab">Map</a></li>
+                                </ul>
 
+                                <!-- Tab panes -->
+                                <div class="tab-content responsive my-tabs">
+                                    <div role="tabpanel" class="tab-pane active" id="tabpan-01">
+                                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 tab-row">
+                                            <div class="row noMarg">
+                                                <!-- === -->
+                                                <div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
+                                                    <div class="row"> <span class="info-title">Posted By</span> </div>
+                                                </div>
+                                                <div class="col-xs-12 col-sm-9 col-md-10 col-lg-10">
+                                                    <div class="row"> <strong>{{selectedTask.name}}</strong> </div>
+                                                </div>
+                                                <!-- === -->
+                                            </div>
+                                        </div>
+                                        <!-- =========================== -->
+                                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 tab-row">
+                                            <div class="row noMarg">
+                                                <!-- === -->
+                                                <div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
+                                                    <div class="row"> <span class="info-title">Description</span> </div>
+                                                </div>
+                                                <div class="col-xs-12 col-sm-9 col-md-10 col-lg-10">
+                                                    <div class="row">
+                                                        <p> {{ selectedTask.description }}</p>
+                                                    </div>
+                                                </div>
+                                                <!-- === -->
+                                            </div>
+                                        </div>
+                                        <!-- =========================== -->
+                                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 tab-row">
+                                            <div class="row noMarg">
+                                                <!-- === -->
+                                                <div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
+                                                    <div class="row"> <span class="info-title">Location</span> </div>
+                                                </div>
+                                                <div class="col-xs-12 col-sm-9 col-md-10 col-lg-10">
+                                                    <div class="row">
+                                                        <p> Location</p>
+                                                    </div>
+                                                </div>
+                                                <!-- === -->
+                                            </div>
+                                        </div>
+                                        <!-- =========================== -->
+                                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 tab-row">
+                                            <div class="row noMarg">
+                                                <!-- === -->
+                                                <div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
+                                                    <div class="row"> <span class="info-title">Deadline</span> </div>
+                                                </div>
+                                                <div class="col-xs-12 col-sm-9 col-md-10 col-lg-10">
+                                                    <div class="row"> <strong>1 Day</strong> </div>
+                                                </div>
+                                                <!-- === -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div role="tabpanel" class="tab-pane" id="tabpan-02">
+                                        <div class="title" ng-hide="offers && offers.length > 0">
+                                            <span>NO OFFER FOR THIS TASK YET</span>
+                                        </div>
+                                        <div class="row" ng-repeat="offer in offers">
+                                            <div class="col-md-10">
+                                                <button ng-show="offer.accepted" class="btn btn-success btn-xs disabled">Assigned</button>
+
+                                                <button ng-show="isTaskCreator(selectedTask) && isOpen(selectedTask)" class="btn btn-info btn-xs" ng-click="acceptOffer(offer.$id,offer.uid)">Accept - ${{offer.total}}</button>
+                                                <button ng-show="isOfferMaker(offer) && isOpen(selectedTask)" class="btn btn-danger btn-xs" ng-click="cancelOffer(offer.$id)">Cancel My Offer - ${{offer.total}}</button>
+                                                <img ng-src="{{offer.gravatar}}" class="img-circle offer gravatar">
+                                                <span>{{offer.name}}</span>
+                                            </div>
+                                        </div><br>
+                                    </div>
+                                    <div role="tabpanel" class="tab-pane" id="tabpan-03">
+                                        <!-- COMMENTS -->
+                                        Comment
+                                    </div>
+                                    <div role="tabpanel" class="tab-pane" id="tabpan-04">
+                                        <!-- Google Map -->
+                                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 map-area">
+                                            <div class="row">
+                                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26503.84678002691!2d151.1568289965733!3d-33.86438446206009!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12afc60e51736d%3A0x5017d681632c9a0!2sRozelle+NSW%2C+Australia!5e0!3m2!1sen!2sin!4v1449817172853" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                                            </div>
+                                        </div>
+                                        <!-- Google Map Ends -->
+                                    </div>
+                                </div>
+                                <!-- Tab panes Ends -->
+                            </div>
+                        </div>
+                        <!-- Tabs Section Ends -->
+
+                    </div>
                 </div>
-            </div>
+
+            
             <!-- Right Section StaEndsrts -->
 
         </div>
