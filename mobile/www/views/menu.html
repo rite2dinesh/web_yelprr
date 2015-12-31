@@ -1,0 +1,44 @@
+<ion-side-menus enable-menu-with-back-views="true" >
+    <ion-side-menu-content>
+        <ion-nav-bar class="header-bg" align-title="center">
+            <ion-nav-back-button class="no-text">
+				<button class="button button-icon button-clear" ui-sref="/welcome">
+				<i class="ion-android-arrow-back"></i>
+				</button> 
+            </ion-nav-back-button>
+            <ion-nav-buttons side="right">
+                <button class="button button-icon button-clear ion-android-more-vertical" menu-toggle="right">
+                </button>
+            </ion-nav-buttons>
+        </ion-nav-bar>
+        <ion-nav-view name="menuContent" ></ion-nav-view>
+    </ion-side-menu-content>
+    <ion-side-menu side="right" >
+        <ion-header-bar class="dark-bg expanded">
+			<span class="avatar" style="background: url('img/ben.png'); background-size: cover;"></span>
+			<h2>John Smith</h2>
+        </ion-header-bar>
+        <ion-content class="stable-bg has-expanded-header">
+            <ion-list>
+				<ion-item nav-clear menu-close ui-sref="#" ng-hide="signedIn()">
+                    Login
+                </ion-item>
+				<ion-item nav-clear menu-close ui-sref="#" ng-hide="signedIn()">
+                    Register
+                </ion-item>
+                <ion-item nav-clear menu-close ui-sref="#" ng-show="signedIn()">
+                    Dashboard
+                </ion-item>
+                <ion-item nav-clear menu-close ui-sref="#" ng-show="signedIn()">
+                    profile
+                </ion-item>
+                <ion-item nav-clear menu-close ui-sref="#" ng-show="signedIn()">
+                    Change Password
+                </ion-item>
+                <ion-item nav-clear menu-close ng-click="logout()" ng-show="signedIn()">
+                    Logout
+                </ion-item>
+            </ion-list>
+        </ion-content>
+    </ion-side-menu>
+</ion-side-menus>

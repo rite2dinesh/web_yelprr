@@ -1,0 +1,80 @@
+/* Empty. Add your own CSS if you like */
+.app-header{ padding: 15px; text-align: center; width: 100%; position: absolute;  top: 0px;  left: 0px;}
+.text-header{font-weight: bold;	letter-spacing: .1em;}
+.welcome-top{padding-top: 25px;}
+.welcome-bottom{padding-top: 150px;}
+
+.bar .title{font-size:16px;}
+
+.header-bg{background-color:#0e3651; color:#fff;}
+.login-signup-middle{margin-top:30px;}
+.login-signup-middle .item{border-top:0; border-left:0; border-right:0; border-color:#0286df;}
+
+.login-signup-middle input::-moz-placeholder, .login-signup-middle textarea::-moz-placeholder {color: #0286df; }
+.login-signup-middle input:-ms-input-placeholder,.login-signup-middle textarea:-ms-input-placeholder {color: #0286df; }
+.login-signup-middle input::-webkit-input-placeholder, .login-signup-middle textarea::-webkit-input-placeholder {color: #0286df;text-indent: 0;}
+
+.login-signup-middle .item-floating-label .placeholder-icon{height:23px !important;}
+.login-signup-middle .item-floating-label .placeholder-icon { padding-right: 18px; position: absolute; bottom: 5px; left: 10px;}
+.login-signup-middle .item-floating-label {padding-left: 40px !important;}
+.login-signup-middle .item-floating-label .input-label{color:#0286df;}
+
+.login-signup-middle .item-input{padding: 0 0 0 16px;}
+.login-signup-middle .item-input input{color:#ffffff;}
+.login-signup-bottom .bottom-link{padding-left:4px; padding-right:4px; font-size:12px; text-decoration:none;}
+
+.social-icon { font-size: 25px;color: #fff;margin: 0 auto;display: table-cell;vertical-align: middle; }
+.social-icon-holder {border: 2px solid #fff;border-radius: 50%;width: 40px;height: 40px;display: inline-table; margin-left: 5px;  margin-right: 5px;}
+.social-icon-holder:hover {background-color: #fff;cursor: pointer;}
+.social-icon-holder:hover .social-icon {color: #272727;cursor: pointer;transition: color 0.5s ease;}
+
+.bar.bar-header .button + .title{text-transform: uppercase; }
+.message{text-align: center;  font-size:16px;}
+.message.error{color:#ff0000; }
+
+.site-link{text-decoration: none;}
+
+:-moz-ui-invalid:not(output) {box-shadow: 0px 0px 0px 0px;}
+
+.modal-top-padding{padding-top:35px;}
+
+
+/* Menu
+==================================*/
+.menu .bar.bar-header.expanded {
+    transition: all .5s ease-in-out;
+}
+
+.menu-open .bar.bar-header.expanded {
+    background-color: #222;
+}
+
+.menu h2 {
+    bottom: 0;
+    font-size: 18px;
+    left: 16px;
+    position: absolute;
+}
+
+.menu .avatar {
+    height: 88px;
+    width: 88px;
+}
+
+.menu.menu-left * {
+    font-weight: bold;
+}
+
+.menu-open .ion-navicon {
+    transform: rotate(-360deg);
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+.menu-open .ion-navicon:before {
+    content: "\f2ca";
+}
+/*==================================*/
+
+
+.back-text {display: none;}

@@ -1,0 +1,75 @@
+<ion-view class="auth-view" cache-view="false">
+
+	<div class="bar bar-header header-bg"> 
+		<div class="buttons buttons-left header-item"> 
+			<span class="left-buttons"> 
+				<button class="button button-icon button-clear" ui-sref="/welcome">
+					<i class="ion-android-arrow-back"></i>
+				</button> 
+			</span> 
+		</div> 
+		<div class="h1 title title-center light">LOGIN</div> 
+	</div>
+
+    <ion-content style="background: url(img/login-signup-bg.png) center; background-size: cover; padding-top: 30px;" >
+		<form ng-submit="login(user)">
+        <div class="login-signup-middle padding-top">
+            <div class="row">
+                <div class="col col-center">
+                    <label class="item item-input item-floating-label">
+                        <img src="img/email-icon.png"  class="placeholder-icon" />
+                        <span class="input-label">Email</span>
+                        <input type="email" ng-model="user.email" placeholder="Email">
+                    </label>
+                    <label class="item item-input item-floating-label">
+                        <img src="img/lock-icon.png"  class="placeholder-icon" />
+                        <span class="input-label">Password</span>
+                        <input type="password" ng-model="user.password" placeholder="Password">
+                    </label>
+                </div>
+            </div>
+        </div>
+		
+		<div class="login-signup-bottom">
+			<div class="row">
+				<div class="col col-center ">
+					<div><button class="button button-full button-balanced ink">LOGIN</button></div>
+					
+					<div ng-show="error.length > 0" ng-repeat="error in errors" class="message error padding-top">{{error}}</div>
+					
+					<div class="text-center padding-top">
+						<div class="social-icon-holder">
+							<span class="ion-social-twitter social-icon"></span>
+						</div>
+						<div class="social-icon-holder">
+							<span class="ion-social-facebook social-icon"></span>
+						</div>
+						<div class="social-icon-holder">
+							<span class="ion-social-googleplus social-icon"></span>
+						</div>
+						<div class="social-icon-holder">
+							<span class="ion-social-linkedin social-icon"></span>
+						</div>
+					</div>					
+					
+					<div class="row light text-center">
+						<div class="col text-left">
+							<a href="#/forgotpassword" class="site-link">Forgot Password?</a>
+						</div>
+						<div class="col text-right">
+							<a href="#/register" class="site-link">Sign Up</a>
+						</div>
+					</div>
+
+					<div class="padding light text-center">
+						<a href="#" class="bottom-link" ng-click="showModalTermsAndConditions()">Terms & conditions</a>
+						<span> | </span>
+						<a href="#" class="bottom-link" ng-click="showModalPrivacyPolicy()">Privacy Policy</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		</form>
+    </ion-content>
+</ion-view>

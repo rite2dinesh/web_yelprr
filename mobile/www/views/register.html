@@ -1,0 +1,90 @@
+<ion-view class="auth-view" cache-view="false">
+
+	<div class="bar bar-header header-bg"> 
+		<div class="buttons buttons-left header-item"> 
+			<span class="left-buttons"> 
+				<button class="button button-icon button-clear" ui-sref="/welcome">
+					<i class="ion-android-arrow-back"></i>
+				</button> 
+			</span> 
+		</div> 
+		<div class="h1 title title-center light">SIGN UP</div> 
+		<!--<div class="buttons buttons-right header-item"> 
+			<span class="right-buttons"> 
+				<button class="button button-icon button-clear ion-android-more-vertical"> </button> 
+			</span> 
+		</div> -->
+	</div>
+
+    <ion-content style="background: url(img/login-signup-bg.png) center; background-size: cover; padding-top: 20px;" >
+        <!--<div class="login-signup-top">
+            <div class="row">
+                <div class="col col-80 col-offset-10 col-center text-center">
+                    <div class="padding-top" style="height:100%;">
+                        <div class="logo">
+                            <img  src="img/logo.png" style="max-width:55%;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>-->
+		<form ng-submit="register(user)">
+        <div class="login-signup-middle padding-top">
+            <div class="row">
+                <div class="col col-center">
+                    <label class="item item-input item-floating-label">
+                        <img src="img/user-icon.png"  class="placeholder-icon" />
+                        <span class="input-label">Name</span>
+                        <input type="text" ng-model="user.name" placeholder="Name">
+                    </label>
+                    <label class="item item-input item-floating-label">
+                        <img src="img/email-icon.png"  class="placeholder-icon" />
+                        <span class="input-label">Email</span>
+                        <input type="email" ng-model="user.email" placeholder="Email">
+                    </label>
+                    <label class="item item-input item-floating-label">
+                        <img src="img/lock-icon.png"  class="placeholder-icon" />
+                        <span class="input-label">Password</span>
+                        <input type="password" ng-model="user.password" placeholder="Password">
+                    </label>
+                </div>
+            </div>
+        </div>
+		
+        <div class="login-signup-bottom">
+            <div class="row">
+                <div class="col col-center ">
+                    <div><button class="button button-full button-balanced ink">SIGN UP</button></div>
+					
+					<div ng-show="error.length > 0" ng-repeat="error in errors" class="message error padding-top">{{error}}</div>
+					
+                    <div class="text-center padding-top">
+                        <div class="social-icon-holder">
+                            <span class="ion-social-twitter social-icon"></span>
+                        </div>
+                        <div class="social-icon-holder">
+                            <span class="ion-social-facebook social-icon"></span>
+                        </div>
+                        <div class="social-icon-holder">
+                            <span class="ion-social-googleplus social-icon"></span>
+                        </div>
+                        <div class="social-icon-holder">
+                            <span class="ion-social-linkedin social-icon"></span>
+                        </div>
+                    </div>					
+					
+                    <div class="padding light text-center">
+                        Already have an account? <a href="#/login">LOGIN</a>
+                    </div>
+
+                    <div class="padding light text-center">
+                        <a href="#" class="bottom-link" ng-click="showModalTermsAndConditions()">Terms & conditions</a>
+                        <span> | </span>
+                        <a href="#" class="bottom-link" ng-click="showModalPrivacyPolicy()">Privacy Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+		</form>
+    </ion-content>
+</ion-view>
