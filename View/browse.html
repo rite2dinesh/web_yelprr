@@ -68,8 +68,8 @@
                                     </li>-->
 
 
-                                    <li ng-repeat="task in tasks | filter: {title: searchTask , status: '!cancelled'} | orderBy: 'datetime':true" id="{{task.$id}}" on-finish-render="ngRepeatFinished">
-                                        <a ng-href="#/browse/{{task.$id}}">
+                                    <li ng-repeat="task in tasks | filter: {title: searchTask , status: '!cancelled'} | orderBy: 'datetime':true" id="{{task.$id}}" on-finish-render="ngRepeatFinished" ng-click="getTaskById(task.$id)" style="cursor:pointer">
+                                        
                                             <span class="icon-cntnr"><img ng-src="{{task.gravatar}}" alt="image" /></span>
 
                                             <div class="task-dtail">
@@ -77,7 +77,6 @@
                                                 <span class="location-icon-bfr">Location</span> <span class="urgent icon-clock-bfr">{{task.status}}</span>
                                             </div>
                                             <span class="tast-price"><span class="swiss-crncy">CHF</span>  {{task.total}}</span>
-                                        </a>
                                     </li>
 
                                     <!-- list end -->

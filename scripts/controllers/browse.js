@@ -9,15 +9,39 @@ app.controller('BrowseController', function ($scope, $routeParams, toaster, Task
 	$scope.afterVal = '';
 	$scope.listMode = true;
 	
-	if ($routeParams.taskId) {
-		var task = Task.getTask($routeParams.taskId).$asObject();
-		$scope.listMode = false;
-		setSelectedTask(task);
-		//$('#' + $routeParams.taskId).css("background-color", "red");
-		//$scope.afterVal = $routeParams.taskId;
-	}
+    // GetByTaskId job new function 
+	$scope.getTaskById = function (taskId) {
+	    var task = Task.getTask(taskId).$asObject();
+	    $scope.listMode = false;
+	    setSelectedTask(task);
+	    //$("#" + taskId).addClass('active');
+	    //$scope.afterVal = $routeParams.taskId;
 
+        // Remove all other job highlighted using foreach
+	    angular.forEach($scope.tasks, function (value, key) {
+	        if (value.$id == taskId) {
+	            $("#" + taskId).addClass('active');
+	        }
+	        else {
+	            $("#" + value.$id).removeClass('active');
+	        }
+	    });
+        //
+
+	}
+    //
 	
+
+    // //Old function get by parameter. using this refresh all page
+	//if ($routeParams.taskId) {
+	//	var task = Task.getTask($routeParams.taskId).$asObject();
+	//	$scope.listMode = false;
+	//	setSelectedTask(task);
+	//	//$('#' + $routeParams.taskId).css("background-color", "red");
+	//	//$scope.afterVal = $routeParams.taskId;
+	//}
+
+	//
 		
 	function setSelectedTask(task) {
 	   
@@ -176,17 +200,17 @@ app.controller('BrowseController', function ($scope, $routeParams, toaster, Task
 
 });
 
-app.directive('onFinishRender', function ($timeout) {
-        return {
-            restrict: 'A',
-            link: function (scope, element, attr) {
-                if (scope.$last === true) {
-                    $timeout(function () {
-                        scope.$emit('ngRepeatFinished');
-                        var id=$("#hdnId").val();
-                        $("#" + id).addClass('active');
-                    });
-                }
-            }
-        }
-    });
+//app.directive('onFinishRender', function ($timeout) {
+//        return {
+//            restrict: 'A',
+//            link: function (scope, element, attr) {
+//                if (scope.$last === true) {
+//                    $timeout(function () {
+//                        scope.$emit('ngRepeatFinished');
+//                        var id=$("#hdnId").val();
+//                        $("#" + id).addClass('active');
+//                    });
+//                }
+//            }
+//        }
+//    });
