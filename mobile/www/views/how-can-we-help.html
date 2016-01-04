@@ -1,34 +1,26 @@
-<ion-view cache-view="false" view-title="HOW CAN WE HELP?">
-
-	<div class="bar bar-header header-bg"> 
-		<div class="buttons buttons-left header-item"> 
-			<span class="left-buttons"> 
-				<button class="button button-icon button-clear" ng-click="$ionicGoBack()">
-					<i class="ion-android-arrow-back"></i>
-				</button> 
-			</span> 
-		</div> 
-		<div class="h1 title title-center light">Menu</div> 
-		<div class="buttons buttons-right header-item"> 
-			<span class="right-buttons"> 
-				<button class="button button-icon button-clear ion-android-more-vertical" menu-toggle="right"> </button> 
-			</span> 
-		</div>
-	</div>
-
+<ion-view cache-view="false" view-title="How can we help?">
     <ion-content>
+		<div class="how-we-help-fabs-container">
+			<div class="content">
+				<div class="row">
+					<div class="col col-center text-center col-top">
+				    	<button class="button button-fab how-we-help-fabs" ng-click="goTo('app.browse')">
+				    		<img src="img/apply-for-task.png">
+				    	</button>
+				    	<div class="txt padding-top">Apply For a Task</div>
+				    </div>	
+			    </div>	
+		    	<hr size="1">
+			    <div class="row">
+				    <div class="col col-center text-center col-bottom">
+				    	<button class="button button-fab how-we-help-fabs">
+				    		<img src="img/post-task.png">
+				    	</button>
+				    	<div class="txt padding-top">Post a Task</div>
+				    </div>	
+			    </div>			
+		    </div>			
+    	</div>
 		
-    </ion-content>
-	
-	<!--<div class="tabs tabs-positive">
-		<a class="tab-item active">
-			<i class="icon ion-home"></i>
-		</a>
-		<a class="tab-item active">
-			<i class="icon ion-home"></i>
-		</a>
-		<a class="tab-item active">
-			<i class="icon ion-home"></i>
-		</a>
-	</div>-->
+    </ion-content>		
 </ion-view>

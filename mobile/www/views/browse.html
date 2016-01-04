@@ -1,0 +1,53 @@
+<ion-view cache-view="false" view-title="Browse Task">
+	<ion-content>
+	<!-- SEARCH TOOL -->
+		<div class="search-bar-container padding-top padding-bottom">
+			<div class="search-input padding-right">
+	      		<label class="item item-input task-search">
+                    <input type="text" placeholder="Search" ng-model="searchTask" class="ng-pristine ng-valid ng-touched" style="">
+                    <img class="" src="img/icon-search-small.png" height="20">
+                </label>
+		    </div>
+		    <div class="search-action text-center">
+		    	<button class="button button-fab browse-icon-fabs" ng-click="goTo('app.browse')">
+		    		<img class="" src="img/icon-filter.png">
+		    	</button>
+		    	<button class="button button-fab browse-icon-fabs" ng-click="goTo('app.browse')">
+		    		<img class="" src="img/icon-location.png">
+		    	</button>
+		    	
+		    </div>
+		</div>
+		<div class="task-list">
+		    <a ng-repeat="task in tasks | filter: {title: searchTask , status: '!cancelled'} | orderBy: 'datetime':true"  ng-click="showTaskDetail(task.$id)" class="site-link task-item">
+					<div class="row">
+				        <div class="col col-20 col-top">
+				            <img class="" height="56" ng-src="{{task.gravatar}}">
+				        </div>
+				        <div class="col col-60 col-top text-left">
+				            <div class="task-title">{{task.title | limitTo:25}}{{ task.title.length > 25? "..." : ""}}</div>
+				            <div>
+		            			<span style="vertical-align:middle; padding-right:3px;">
+		            				<img src="img/small-location-icon.png" height="11" />		
+	            				</span>			            			
+		            			<span>Location</span>
+				            </div>
+				            <!-- <div am-time-ago="task.datetime"></div> -->
+				            <div class="status">
+				            	<span style="vertical-align:middle; padding-right:3px;">
+		            				<img src="img/small-status-icon.png" height="11" />		
+	            				</span>			            			
+				            	<span class="{{task.status}}">{{task.status}}</span>
+				            </div>		        	
+				        </div>
+				        <div class="col col-20 col-top task-payment text-right1">
+				        	${{task.total}}
+				        </div>
+				    </div>		    
+			    	<div class="task-separator"></div>
+		    	</a>
+		</div>			
+	</ion-content>
+<!--<div ng-include="'views/partials/edit.html'"></div>
+<div ng-include="'views/partials/offer.html'"></div>-->
+</ion-view>

@@ -26,7 +26,7 @@ app.controller('AuthController', function($scope, $location, toaster, Auth, ioni
     Auth.register(user)
       .then(function() {
         //toaster.pop('success', "Registered successfully");
-        $location.path('/howcanwehelp');
+        $state.transitionTo('app.howcanwehelp');
 		$ionicLoading.hide();
       }, function(err) {
         errMessage(err);
@@ -35,22 +35,20 @@ app.controller('AuthController', function($scope, $location, toaster, Auth, ioni
 	  
   };
 
-	$scope.login = function(user) {
-	
-	$ionicLoading.show({ template: '<ion-spinner icon="spiral"></ion-spinner>' });
-	
-     Auth.login(user)
+  $scope.login = function(user) {
+
+    $ionicLoading.show({ template: '<ion-spinner icon="spiral"></ion-spinner>' });
+
+    Auth.login(user)
       .then(function() {
         //toaster.pop('success', "Logged in successfully");
-        $location.path('/howcanwehelp');
-		$ionicLoading.hide();
+        $state.transitionTo('app.howcanwehelp');
+        $ionicLoading.hide();
       }, function(err) {        
         errMessage(err);
-		$ionicLoading.hide();
-      });    
-	  
-	  
-	};
+        $ionicLoading.hide();
+    });    
+  };
 
 	$scope.changePassword = function(user) {
      Auth.changePassword(user)
@@ -68,11 +66,11 @@ app.controller('AuthController', function($scope, $location, toaster, Auth, ioni
   };
   
   $scope.showModalTermsAndConditions = function(){
-	$scope.terms_and_conditions_modal.show();
+	 $scope.terms_and_conditions_modal.show();
   }
   
   $scope.showModalPrivacyPolicy = function(){
-	$scope.privacy_policy_model.show();
+    $scope.privacy_policy_model.show();
   }
 
 	function errMessage(err) {

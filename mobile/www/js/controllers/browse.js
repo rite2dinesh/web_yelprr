@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('BrowseController', function($scope, $routeParams, toaster, Task, Auth, Comment, Offer) {
+app.controller('BrowseController', function($scope, $routeParams, toaster, Task, Auth, Comment, Offer, ionicMaterialInk, $ionicModal) {
 
 	$scope.searchTask = '';		
 	$scope.tasks = Task.all;
@@ -9,12 +9,30 @@ app.controller('BrowseController', function($scope, $routeParams, toaster, Task,
 	$scope.signedIn = Auth.signedIn;
 
 	$scope.listMode = true;
+
+	$ionicModal.fromTemplateUrl('views/task-detail.html', {
+			scope: $scope,
+			animation: 'slide-in-up'
+		}).then(function(modal) {
+			$scope.task_detail_modal = modal
+		})  
 	
 	if($routeParams.taskId) {
 		var task = Task.getTask($routeParams.taskId).$asObject();
 		$scope.listMode = false;
+
+		
+
+
 		setSelectedTask(task);	
 	}	
+
+	$scope.showTaskDetail = function(taskId)
+	{
+		var task = Task.getTask(taskId).$asObject();
+		setSelectedTask(task);
+		$scope.task_detail_modal.show();
+	}
 		
 	function setSelectedTask(task) {
 		$scope.selectedTask = task;
@@ -56,6 +74,7 @@ app.controller('BrowseController', function($scope, $routeParams, toaster, Task,
 
 		// Get list of offers for the selected task
 		$scope.offers = Offer.offers(task.$id);		
+
 	};
 
 	// --------------- TASK ---------------	
@@ -138,6 +157,6 @@ app.controller('BrowseController', function($scope, $routeParams, toaster, Task,
 		});
 	};
 
-
+ionicMaterialInk.displayEffect();
 	
 });

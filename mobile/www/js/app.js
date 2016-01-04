@@ -23,17 +23,17 @@ var app = angular.module('microjob', [
     ])
     .constant('FURL', 'https://task-ninja.firebaseio.com/')
     .run(function($ionicPlatform, $rootScope, $timeout, $ionicConfig, $location, $state) {
-		$ionicPlatform.ready(function() {
-			// Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
-			// for form inputs)
-			if (window.cordova && window.cordova.plugins.Keyboard) {
-				cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
-			}
-			if (window.StatusBar) {
-				// org.apache.cordova.statusbar required
-				StatusBar.styleDefault();
-			}
-		});
+		// $ionicPlatform.ready(function() {
+		// 	// Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
+		// 	// for form inputs)
+		// 	if (window.cordova && window.cordova.plugins.Keyboard) {
+		// 		cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+		// 	}
+		// 	if (window.StatusBar) {
+		// 		// org.apache.cordova.statusbar required
+		// 		StatusBar.styleDefault();
+		// 	}
+		// });
 	
 		$rootScope.$on("$stateChangeError", function(event, toState, toParams, fromState, fromParams, error) {
 		 console.log("$stateChangeError", error);
@@ -71,7 +71,6 @@ var app = angular.module('microjob', [
 		  })
 		  .state('app.howcanwehelp', {
 			url: '/howcanwehelp',
-			authenticate: true,
 			cache: false,
 			views: {
 			'menuContent': {
@@ -87,8 +86,14 @@ var app = angular.module('microjob', [
 		  })
 		  .state('app.browse', {
 			url: '/browse',
-			templateUrl: 'views/browse.html',
-			controller: 'BrowseController'     
+			cache: false,
+			views: {
+			'menuContent': {
+					templateUrl: 'views/browse.html',
+					controller: 'BrowseController'     
+				}
+			},
+			
 		  })
 		  .state('/browse/:taskId', {
 			url: '/browse/:taskId',

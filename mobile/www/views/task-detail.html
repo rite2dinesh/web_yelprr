@@ -1,0 +1,57 @@
+<ion-modal-view class="modal-view">
+	<div class="bar bar-header header-bg"> 		
+		<div class="h1 title title-center light">Task Detail</div> 
+		<div class="buttons buttons-right header-item"> 
+			<span class="right-buttons"> 
+				<button class="button button-icon button-clear" ng-click="task_detail_modal.hide()">
+					<i class="icon ion-close"></i>
+				</button> 
+			</span> 
+		</div> 
+	</div>
+	<ion-content>
+		<div class="modal-top-padding">
+			<div class="padding">
+				<h3>{{ selectedTask.title }}</h3>
+				<div class="list">
+
+				    <a class="item item-thumbnail-left" href="#">
+				      <img ng-src="{{ selectedTask.gravatar }}" class="gravatar" >
+				      <p>Posted by {{selectedTask.name}}</p>
+				      <p><span am-time-ago="selectedTask.datetime"></span></p>
+				      <p><span class="label status {{selectedTask.status}}">{{ selectedTask.status }}</span></p>
+				    </a>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col title">
+					<div class="price-tag">
+						${{ selectedTask.total }}
+						
+						<div ng-show="isTaskCreator(selectedTask) && isOpen(selectedTask)">
+							<div class="btn-group">
+							    <a href="" class="btn btn-warning">Admin</a>
+							    <a href="" class="btn btn-warning dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></a>
+							    <ul class="dropdown-menu">
+							        <li><a href="" data-toggle="modal" data-target="#ediModal">EDIT TASK</a></li>							        
+							        <li class="divider"></li>
+							        <li><a href="" ng-click="cancelTask(selectedTask.$id)">CANCEL TASK</a></li>
+							    </ul>
+							</div>
+						</div>
+
+						<div ng-show="isOpen(selectedTask) && !isTaskCreator(selectedTask) && !alreadyOffered">
+							<button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#offModal">Make an Offer</button>
+						</div>
+
+						<div ng-show="isAssignee(selectedTask) && !isCompleted(selectedTask)">
+							<button class="btn btn-danger btn-sm" ng-click="completeTask(selectedTask.$id)">Complete</button>
+						</div>
+
+					</div>
+				</div>
+			</div>	
+		</div>
+	</ion-content>
+</ion-modal-view>
