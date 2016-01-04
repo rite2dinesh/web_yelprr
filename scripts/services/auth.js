@@ -23,7 +23,7 @@ app.factory('Auth', function(FURL, $firebaseAuth, $firebase) {
       return $firebase(ref.child('profile').child(uid)).$asObject();
     },
 
-    login: function(user) {
+    login: function (user) {
       return auth.$authWithPassword(
         {email: user.email, password: user.password}
       );
