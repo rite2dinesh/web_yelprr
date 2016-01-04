@@ -14,12 +14,14 @@
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- custome Stylesheets -->
+    <link href="css/orange.css" rel="stylesheet" />
     <link type="text/css" href="css/style.css" rel="stylesheet">
     <link href="css/jquery.range.css" rel="stylesheet">
     <link rel="stylesheet" href="css/jquery.mCustomScrollbar.css">
     <link type="text/css" href="css/animate.min.css" rel="stylesheet">
     <link type="text/css" href="css/bootstrap-select.min.css" rel="stylesheet">
     <link href="assets/css/buttons.css" rel="stylesheet" />
+
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -28,17 +30,17 @@
         <![endif]-->
 
     <style>
-           .mCustomScrollbar {
-    overflow-x: hidden;
-}
+        .mCustomScrollbar {
+            overflow-x: hidden;
+        }
+
         ul.task-list {
-            height:600px
+            height: 600px;
         }
 
         .icon-cntnr > img {
             width: 50px;
         }
-              
     </style>
 </head>
 <body ng-app="TaskNinjaApp">
@@ -141,6 +143,93 @@
         </div>
     </footer>
     <!-- ====== Footer ====== -->
+    <!-- sign in popup -->
+<!-- Modal -->
+   
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <form ng-submit="login(user)" ng-controller="AuthController">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+
+                <div class="modal-dialog mdl-sign" role="document">
+
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="myModalLabel">Sign In</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="col-sm-12 col-md-12 login-flds">
+                                <input type="email" ng-model="user.email" class="form-control" id="exampleInputEmail1" placeholder="Email" required>
+                            </div>
+                            <div class="col-sm-12 col-md-12 login-flds">
+                                <input type="password" class="form-control" ng-model="user.password" id="inputPassword" placeholder="Password" required>
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-6 remember">
+                                <input id="rembPw" type="checkbox">
+                                <label class="remPw" for="rembPw">Remember Password</label>
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-6 remember"> <a href="#" class="ForgotPass" data-toggle="modal" data-target="#myModal2">Forgot Password?</a> </div>
+                        </div>
+                        <div class="modal-footer">
+                            <input type="submit" value="Login" class="btn btn-primary gradient">
+                            <p>Don’t have an Account? Create one now</p>
+                            <h1><span class="orWith">Or Login With </span></h1>
+                            <ul>
+                                <li class="twit"><a href="#"></a></li>
+                                <li class="fb"><a href="#"></a></li>
+                                <li class="gpls"><a href="#"></a></li>
+                                <li class="ldin"><a href="#"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </form>
+</div>
+   
+<!-- sign in popup end -->
+    <!-- sign up popup -->
+    <!-- Modal -->
+    <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <div class="modal-dialog mdl-sign" role="document">
+            <form ng-submit="register(user)" ng-controller="AuthController">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="myModalLabel">Sign Up</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="col-sm-12 col-md-12 login-flds">
+                            <input type="text" ng-model="user.name" class="form-control" id="exampleInputNameRegister" placeholder="Name" onchange="fnNameCheck()">
+                        </div>
+                        <div class="col-sm-12 col-md-12 login-flds">
+                            <input type="email" ng-model="user.email" class="form-control" id="exampleInputEmailRegister" onchange="fnEmailCheck()" placeholder="Email" onblur="fnEmailValidation()">
+                            <label id="lblEmailAddress" style="display:none"></label>
+                        </div>
+                        <div class="col-sm-12 col-md-12 login-flds">
+                            <input type="password" ng-model="user.password" class="form-control" id="inputPasswordRegister" placeholder="Password" onfocus="fnOnFocusPassword()">
+                        </div>
+                        <div class="col-sm-12 col-md-12 login-flds">
+                            <input type="password" class="form-control" id="inputConfirmPasswordRegister" placeholder="Confirm password" onchange="validationcheckonchange()" onfocus="fnOnFocusConfPassword()" onblur="    validationcheck()">
+                            <label id="lblConfPassword"></label>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="submit" value="Register" class="btn btn-primary gradient" id="btnRegister" disabled="disabled">
+                        <p>Already have an account? Login</p>
+                        <h1><span class="orWith">Or Sign Up With</span></h1>
+                        <ul>
+                            <li class="twit"><a href="#"></a></li>
+                            <li class="fb"><a href="#"></a></li>
+                            <li class="gpls"><a href="#"></a></li>
+                            <li class="ldin"><a href="#"></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- sign up popup end -->
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="js/jquery-2.1.4.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
@@ -151,7 +240,7 @@
     <script src="js/jquery.range.js"></script>
     <script src="js/responsive-tabs.js"></script>
     <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
-
+    <script src="js/icheck.min.js"></script>
 
     <!-- Animation Wow Script -->
 
@@ -172,16 +261,19 @@
 
 
     <script src="../scripts/app.js"></script>
-    <script src="../scripts/services/auth.js"></script>
-    <script src="../scripts/services/task.js"></script>
-    <script src="../scripts/services/comment.js"></script>
-    <script src="../scripts/services/offer.js"></script>
-    <script src="../scripts/services/dashboard.js"></script>
+
     <script src="../scripts/controllers/nav.js"></script>
     <script src="../scripts/controllers/task.js"></script>
     <script src="../scripts/controllers/auth.js"></script>
     <script src="../scripts/controllers/browse.js"></script>
     <script src="../scripts/controllers/dashboard.js"></script>
+
+    <script src="../scripts/services/auth.js"></script>
+    <script src="../scripts/services/task.js"></script>
+    <script src="../scripts/services/comment.js"></script>
+    <script src="../scripts/services/offer.js"></script>
+    <script src="../scripts/services/dashboard.js"></script>
+   
 
     <script src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=places"></script>
     <script src="scripts/map/Mapfrom.js"></script>
@@ -190,12 +282,26 @@
 </html>
 <script>
     $(document).ready(function () {
+        $('input').iCheck({
+            checkboxClass: 'icheckbox_minimal-orange',
+            radioClass: 'iradio_minimal-orange',
+            increaseArea: '20%' // optional
+        });
+    });
+</script>
+<script>
+    $(".ForgotPass").click(function () {
+        $("#myModal").modal('hide');
+    });
+</script>
+<script>
+    $(document).ready(function () {
         $.material.init();
     });
 </script>
 
 <script>
-    
+
 
     var wow = new WOW(
     {
@@ -210,7 +316,44 @@
     wow.init();
 </script>
 <!-- Animation Wow Script Ends -->
+<script>
+    $(document)
+      .on('show.bs.modal', '.modal', function (event) {
+          $(this).appendTo($('body'));
+      })
+      .on('shown.bs.modal', '.modal.in', function (event) {
+          setModalsAndBackdropsOrder();
+      })
+      .on('hidden.bs.modal', '.modal', function (event) {
+          setModalsAndBackdropsOrder();
+          if ($('.modal.in').length == 0) {
+              $('body').removeClass('modal-open');
+          }
+      });
 
+    function setModalsAndBackdropsOrder() {
+        $('body').addClass('modal-open');
+        var modalZIndex = $('.modal.in').length + 1050 + 1;
+        var backdropZIndex = modalZIndex - 1;
+        $('.modal-backdrop').addClass('hidden');
+        $('.modal.in:last').css('z-index', modalZIndex);
+        $('.modal-backdrop.in:last').css('z-index', backdropZIndex).removeClass('hidden');
+    }
+</script>
+<!-- Pop hide-issu Fix Ends -->
+
+<script>
+    $(document).ready(function (e) {
+        $('.blnk-btn').click(function () {
+            $('.hide-sec').show();
+            $('.show-cata').hide();
+        });
+        $('.hide-btn').click(function () {
+            $('.hide-sec').hide();
+            $('.show-cata').show();
+        });
+    });
+</script>
 <script>
     (function ($) {
         $(window).load(function () {
@@ -268,5 +411,114 @@
     })
 
 
+    function validationcheck()
+    {
+        var password = $("#inputPasswordRegister").val();
+        var confpassword = $("#inputConfirmPasswordRegister").val();
+
+        var name = $("#exampleInputNameRegister").val();
+        var email = $("#exampleInputEmailRegister").val();
+
+        if (confpassword != '' && name != '' && email != '') {
+            if (password === confpassword) {
+                $('input[type="submit"]').removeAttr('disabled');
+                $("#lblConfPassword").text('');
+
+            }
+            else {
+                $("#lblConfPassword").text('Password mismatch');
+                $('input[type="submit"]').attr('disabled', 'disabled');
+            }
+        }
+    }
+
+    function validationcheckonchange() {
+        var password = $("#inputPasswordRegister").val();
+        var confpassword = $("#inputConfirmPasswordRegister").val();
+
+        var name = $("#exampleInputNameRegister").val();
+        var email = $("#exampleInputEmailRegister").val();
+
+        if (confpassword != '' && name != '' && email!='')
+        {
+            if (password === confpassword) {
+                $('input[type="submit"]').removeAttr('disabled');
+                $("#lblConfPassword").text('');
+
+            }
+            else {
+                $("#lblConfPassword").text('Password mismatch');
+                $('input[type="submit"]').attr('disabled', 'disabled');
+            }
+        }
+       
+    }
+
+
+    function fnNameCheck()
+    {
+        var name = $("#exampleInputNameRegister").val();
+       
+        if(name=='')
+        {
+            $('input[type="submit"]').attr('disabled', 'disabled');
+        }
+     
+    }
+
+    function fnEmailCheck() {
+        var email = $("#exampleInputEmailRegister").val();
+
+        if (email == '') {
+            $('input[type="submit"]').attr('disabled', 'disabled');
+        }
+       
+    }
+
+    function ValidateEmail(email) {
+        var expr = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+        return expr.test(email);
+    };
+    function fnEmailValidation()
+    {
+        var email = $("#exampleInputEmailRegister").val();
+        if (!ValidateEmail($("#exampleInputEmailRegister").val())) {
+            $("#lblEmailAddress").text('Invalid email address.');
+            $("#lblEmailAddress").css('display','block');
+            $("#exampleInputEmailRegister").focus();
+        }
+        else
+        {
+            $("#lblEmailAddress").text('');
+            $("#lblEmailAddress").css('display', 'none');
+        }
+        
+    }
+
+
+    function fnOnFocusPassword() {
+        var email = $("#exampleInputEmailRegister").val();
+        if (!ValidateEmail($("#exampleInputEmailRegister").val())) {
+            $("#lblEmailAddress").text('Invalid email address.');
+            $("#lblEmailAddress").css('display', 'block');
+            $("#exampleInputEmailRegister").focus();
+        }
+        else {
+            $("#lblEmailAddress").text('');
+            $("#lblEmailAddress").css('display', 'none');
+        }
+    }
+
+
+    function fnOnFocusConfPassword() {
+        var email = $("#exampleInputEmailRegister").val();
+        if (!ValidateEmail($("#exampleInputEmailRegister").val())) {
+            $("#lblEmailAddress").text('Invalid email address.');
+            $("#exampleInputEmailRegister").focus();
+        }
+        else {
+            $("#lblEmailAddress").text('');
+        }
+    }
     
 </script>

@@ -10,6 +10,7 @@ html {
 body {
 	/* Margin bottom by footer height */
 	margin-bottom: 112px;
+	padding:0 !important;
 }
 .footer {
 	background-color: #0f1921;
@@ -301,18 +302,18 @@ body {
 	width: 50px;
 }
 .cmn-caption {
-	color: #777777;
-	display: inline-block;
-	float: none;
-	font-size: 13px;
-	margin: 0 0 15px;
-	width: 75%;
+  color: #777777;
+  display: inline-block;
+  float: none;
+  font-size: 13px;
+  margin: 0 0 40px;
+  width: 75%;
 }
 .cmn-content {
 	padding-top: 20px;
 }
 .cmn-sec {
-	margin-top: 35px;
+	margin-top: 0px;
 	margin-bottom: 20px;
 }
 ul.one-fifth-sec {
@@ -429,7 +430,7 @@ ul.footer-links li a:hover, ul.footer-links a:focus {
 	left: 16px;
 	opacity: 0.55;
 	position: absolute;
-	top: 13px;
+	top: 8px;
 	z-index: 11;
 }
 .input-group.ftr-search input.form-control {
@@ -636,7 +637,7 @@ ul.task-list {
 	background: #000 none repeat scroll 0 0;
 	content: "";
 	height: 100%;
-	left: 80px;
+	left: 60px;
 	opacity: 0.2;
 	position: absolute;
 	top: 0;
@@ -646,23 +647,17 @@ ul.task-list {
 	background: #eaeaea;
 }
 .task-list .icon-cntnr {
-	width: 22%;
+	width: 13%;
 }
 .task-list > li span, .task-list > li div {
 	display: table-cell;
 	vertical-align: middle;
-    float:left;
-}
-.ng-scope > a {
-  float: left;
-  width: 100%;
 }
 .task-dtail > h1 {
 	font-family: Open Sans;
 	font-size: 20px;
 	font-weight: 400;
 	margin: 0;
-    color:#333333;
 }
 .task-list .task-dtail span {
 	color: #6b6b6b;
@@ -673,11 +668,10 @@ ul.task-list {
 	width: 100%;
 }
 .task-list .tast-price {
-  color: #58182a;
-  float: right;
-  font-size: 25px;
-  text-align: right;
-  vertical-align: top;
+	color: #58182a;
+	font-size: 25px;
+    text-align: right;
+	vertical-align: top;
 }
 .task-list .task-dtail span.urgent {
 	color: #f20909;
@@ -747,10 +741,8 @@ ul.task-list {
 	width: 100%;
 }
 .map-area {
-	/*border-bottom: 4px solid #382536;
-	border-top: 4px solid #382536;*/
-    border-bottom: 4px solid #fff;
-	border-top: 4px solid #fff;
+	border-bottom: 4px solid #382536;
+	border-top: 4px solid #382536;
 }
 .map-area iframe {
 	width: 100%;
@@ -896,6 +888,68 @@ a.cmn-tab-lnk:focus {
 .panel-down .panel-title .lnk-04::before {
 	background: url("../images/icons-tabs-task.png") no-repeat scroll -44px -18px;
 }
+
+.category .panel-heading .panel-title a {
+  background: rgba(0, 0, 0, 0) url("../images/categories.png") no-repeat scroll 0 -49px;
+  padding-left: 34px;
+  text-decoration: none;
+  top: -3px;
+  color:#666;
+}
+.category .panel-heading:hover .panel-title a {
+  background: rgba(0, 0, 0, 0) url("../images/categories.png") no-repeat scroll 0 -2px;
+  padding-left: 34px;
+  text-decoration: none;
+  top: -3px;
+  color:#000;
+}
+
+.task .panel-heading .panel-title a {
+  background: rgba(0, 0, 0, 0) url("../images/task-detail.png") no-repeat scroll 0 -49px;
+  padding-left: 34px;
+  text-decoration: none;
+  top: -3px;
+  color:#666;
+}
+.task .panel-heading:hover .panel-title a {
+  background: rgba(0, 0, 0, 0) url("../images/task-detail.png") no-repeat scroll 0 -2px;
+  padding-left: 34px;
+  text-decoration: none;
+  top: -3px;
+  color:#000;
+}
+
+.location .panel-heading .panel-title a {
+  background: rgba(0, 0, 0, 0) url("../images/location.png") no-repeat scroll 0 -49px;
+  padding-left: 34px;
+  text-decoration: none;
+  top: -3px;
+  color:#666;
+}
+.location .panel-heading:hover .panel-title a {
+  background: rgba(0, 0, 0, 0) url("../images/location.png") no-repeat scroll 0 -2px;
+  padding-left: 34px;
+  text-decoration: none;
+  top: -3px;
+  color:#000;
+}
+
+.deadline .panel-heading .panel-title a {
+  background: rgba(0, 0, 0, 0) url("../images/budget.png") no-repeat scroll 0 -49px;
+  padding-left: 34px;
+  text-decoration: none;
+  top: -3px;
+  color:#666;
+}
+.deadline .panel-heading:hover .panel-title a {
+  background: rgba(0, 0, 0, 0) url("../images/budget.png") no-repeat scroll 0 -2px;
+  padding-left: 34px;
+  text-decoration: none;
+  top: -3px;
+  color:#000;
+}
+
+
 .Tab-sec.cmn-tabs {
 	box-shadow: 5px 5px 7px -8px rgba(0, 0, 0, 0.7);
 }
@@ -923,18 +977,564 @@ a.cmn-tab-lnk:focus {
     font-family: Open Sans;
     font-size: 13px;
     font-weight: 600;
-    margin-right: 6px;
-    margin-top: 9px;
+    margin-right: -3px;
     width: auto;
 }
+
+
+
+
 /* ________________ Browse Task Ends ____________________________________ */
 
 
 
-/* ________________ New Page ____________________________________ */
+/* ________________ signin popup ____________________________________ */
+
+.modal
+{
+	background: rgba(228, 227, 228, 0.9);
+	transition:opacity 0.15s linear 0s;
+}
+.mdl-sign .modal-content {
+  border-radius: 12px;
+}
+.mdl-sign .modal-header {
+  background: rgba(0, 0, 0, 0) url("../images/s-pop-bg.png") no-repeat scroll 0 0 / 100% auto;
+  border: medium none;
+  border-top-left-radius: 9px;
+  border-top-right-radius: 9px;
+  min-height: 152px;
+}
+.mdl-sign .modal-title {
+  color: #fff;
+  font-size: 30px;
+  font-weight: lighter;
+  line-height: 0;
+  margin: 60px 0 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+#myModal button.close {
+  background: transparent none repeat scroll 0 0;
+  border: medium none;
+  color: #666;
+  cursor: pointer;
+  font-size: 34px;
+  font-weight: 300;
+  opacity: 1;
+  padding: 0;
+  position: absolute;
+  right: 20px;
+  text-shadow: none;
+  top: 20px;
+}
+#myModal  button.close:hover {
+  color: #fd5f07;
+}
+#myModal1 button.close {
+  background: transparent none repeat scroll 0 0;
+  border: medium none;
+  color: #666;
+  cursor: pointer;
+  font-size: 34px;
+  font-weight: 300;
+  opacity: 1;
+  padding: 0;
+  position: absolute;
+  right: 20px;
+  text-shadow: none;
+  top: 20px;
+}
+#myModal1  button.close:hover {
+  color: #fd5f07;
+}
+
+#myModal2 button.close {
+  background: transparent none repeat scroll 0 0;
+  border: medium none;
+  color: #666;
+  cursor: pointer;
+  font-size: 34px;
+  font-weight: 300;
+  opacity: 1;
+  padding: 0;
+  position: absolute;
+  right: 20px;
+  text-shadow: none;
+  top: 20px;
+}
+#myModal2  button.close:hover {
+  color: #fd5f07;
+}
+
+.modal-dialog.mdl-sign {
+  margin: 113px auto;
+  width: 456px;
+}
+.mdl-sign .modal-body {
+  border: medium none;
+  float: left;
+  padding: 15px;
+  position: relative;
+  width: 100%;
+}
+.mdl-sign .modal-footer {
+  border-top: medium none;
+  padding: 15px;
+  text-align: center;
+}
+.login-flds input {
+  border: 1px solid #a9d2cd;
+  border-radius: 0;
+  box-shadow: none;
+  margin-top: 15px;
+  height:47px;
+}
+.login-flds textarea {
+  border: 1px solid #a9d2cd;
+  border-radius: 0;
+  box-shadow: none;
+  margin-top: 15px;
+  padding: 15px;
+  width: 100%;
+}
+.remember {
+  margin-top: 20px;
+}
+.ForgotPass {
+  color: #a9a9a9;
+  float: right;
+  font-size: 14px;
+  font-style: italic;
+}
+.remPw {
+  color: #767676;
+  font-size: 15px;
+  font-weight: normal;
+  margin-left: 10px;
+}
+.login {
+  background: #82a441 none repeat scroll 0 0;
+  border: medium none;
+  border-radius: 0;
+  color: #fff;
+  font-size: 16px;
+  padding: 12px 18px;
+  text-transform: uppercase;
+}
+.signup {
+  margin-top: 15px;
+}
+.mdl-sign .modal-footer > p {
+  color: #767676;
+  font-size: 14px;
+  margin-top: 10px;
+}
+.mdl-sign .modal-footer > h1 {
+  border-bottom: 1px dashed #999;
+}
+.mdl-sign .modal-footer > h1 {
+  border-bottom: 1px dashed #dddddd;
+  margin: 30px 0;
+  position: relative;
+}
+.orWith {
+  background: #fff none repeat scroll 0 0;
+  color: #424242;
+  font-size: 16px;
+  left: 36%;
+  padding: 0 10px;
+  position: absolute;
+  text-align: center;
+  top: -10px;
+}
+.mdl-sign .modal-footer > ul {
+  display: block;
+  margin-top: 20px;
+  padding:0px;
+}
+.mdl-sign .modal-footer ul li {
+  border: 1px solid #ddd;
+  border-radius: 100%;
+  display: inline-block;
+  height: 35px;
+  width: 35px;
+  margin:0px 6px;
+}
+.mdl-sign .modal-footer ul li.twit {
+  background: rgba(0, 0, 0, 0) url("../images/social-sprite.png") no-repeat scroll 3px 3px;
+  transition:all 0.5s ease 0s;
+}
+.mdl-sign .modal-footer ul li.twit:hover {
+  background: rgba(0, 0, 0, 0) url("../images/social-sprite.png") no-repeat scroll 3px -28px;
+    transition:all 0.5s ease 0s;
+}
+
+.mdl-sign .modal-footer ul li.fb {
+  background: rgba(0, 0, 0, 0) url("../images/social-sprite.png") no-repeat scroll -53px 3px;
+  transition:all 0.5s ease 0s;
+}
+.mdl-sign .modal-footer ul li.fb:hover {
+  background: rgba(0, 0, 0, 0) url("../images/social-sprite.png") no-repeat scroll -53px -28px;
+    transition:all 0.5s ease 0s;
+}
+
+.mdl-sign .modal-footer ul li.gpls {
+  background: rgba(0, 0, 0, 0) url("../images/social-sprite.png") no-repeat scroll -110px 3px;
+  transition:all 0.5s ease 0s;
+}
+.mdl-sign .modal-footer ul li.gpls:hover {
+  background: rgba(0, 0, 0, 0) url("../images/social-sprite.png") no-repeat scroll -110px -28px;
+    transition:all 0.5s ease 0s;
+}
+
+.mdl-sign .modal-footer ul li.ldin {
+  background: rgba(0, 0, 0, 0) url("../images/social-sprite.png") no-repeat scroll -165px 3px;
+  transition:all 0.5s ease 0s;
+}
+.mdl-sign .modal-footer ul li.ldin:hover {
+  background: rgba(0, 0, 0, 0) url("../images/social-sprite.png") no-repeat scroll -165px -28px;
+    transition:all 0.5s ease 0s;
+}
+/* post task popup */
+.modal-dialog.pTask_Mdl
+{
+	width:835px;
+}
+#myModal3 button.close {
+  background: transparent none repeat scroll 0 0;
+  color: #666;
+  cursor: pointer;
+  font-size: 34px;
+  font-weight: 300;
+  opacity: 1;
+  padding: 0;
+  position: absolute;
+  right: 20px;
+  text-shadow: none;
+  top: 20px;
+}
+#myModal3 button.close:hover {
+  color: #fd5f07;
+}
+.pTask_Mdl .modal-header {
+  background: #32363e none repeat scroll 0 0;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  color: #fff;
+}
+.pTask_Mdl .modal-title {
+  font-size: 25px;
+  font-weight: 300;
+  text-align: center;
+  text-transform: uppercase;
+}
+.pTask_Mdl .modal-body {
+  padding: 0;
+  position: relative;
+}
+.pTask_Mdl .modal-body .nav.nav-tabs
+{
+	background:#f8f8f8;
+}
+.pTask_Mdl .modal-body .nav-tabs > li {
+  float: left;
+  margin-bottom: 0;
+  width:25%;
+}
+.pTask_Mdl .modal-body .nav-tabs > li > a {
+  border: medium none;
+  border-radius: 0px;
+  line-height:1;
+  margin-right: 0px;
+}
+.pTask_Mdl .modal-body .nav-tabs > li.active > a, .pTask_Mdl .modal-body .nav-tabs > li.active > a:focus, .pTask_Mdl .modal-body .nav-tabs > li.active > a:hover
+{
+	border:none;
+}
+.pTask_Mdl .modal-body .nav > li > a {
+  color: #a4aaaf;
+  display: block;
+  font-size: 16px;
+  position: relative;
+}
+.pTask_Mdl .modal-body .nav-tabs > li.category > a {
+  background: rgba(0, 0, 0, 0) url("../images/categories.png") no-repeat scroll 12px -40px;
+ padding-left: 48px;
+}
+.pTask_Mdl .modal-body .nav-tabs > li.category > a:hover, .pTask_Mdl .modal-body .nav-tabs > li.category.active > a{
+  background: rgba(0, 0, 0, 0) url("../images/categories.png") no-repeat scroll 12px 7px;
+  padding-left: 48px;
+  color:#000;
+  
+}
+
+.pTask_Mdl .modal-body .nav-tabs > li.task > a {
+  background: rgba(0, 0, 0, 0) url("../images/task-detail.png") no-repeat scroll 12px -40px;
+  padding-left: 48px;
+}
+.pTask_Mdl .modal-body .nav-tabs > li.task > a:hover, .pTask_Mdl .modal-body .nav-tabs > li.task.active > a {
+  background: rgba(0, 0, 0, 0) url("../images/task-detail.png") no-repeat scroll 12px 7px;
+  padding-left: 48px;
+  color:#000;
+}
+
+.pTask_Mdl .modal-body .nav-tabs > li.location > a {
+  background: rgba(0, 0, 0, 0) url("../images/location.png") no-repeat scroll 12px -40px;
+  padding-left: 48px;
+}
+.pTask_Mdl .modal-body .nav-tabs > li.location > a:hover, .pTask_Mdl .modal-body .nav-tabs > li.location.active > a {
+  background: rgba(0, 0, 0, 0) url("../images/location.png") no-repeat scroll 12px 7px;
+  padding-left: 48px;
+  color:#000;
+}
+
+.pTask_Mdl .modal-body .nav-tabs > li.deadline > a {
+  background: rgba(0, 0, 0, 0) url("../images/budget.png") no-repeat scroll 12px -40px;
+  padding-left: 48px;
+}
+.pTask_Mdl .modal-body .nav-tabs > li.deadline > a:hover, .pTask_Mdl .modal-body .nav-tabs > li.deadline.active > a{
+  background: rgba(0, 0, 0, 0) url("../images/budget.png") no-repeat scroll 12px 7px;
+  padding-left: 48px;
+  color:#000;
+}
+
+.pTask_Mdl .modal-body .tab-content {
+  float: left;
+  padding: 20px 20px 20px;
+  width: 100%;
+}
+.c-pop li > h4 {
+  color: #6e7983;
+  font-size: 13px;
+  margin: 12px;
+}
+.c-pop li.active > h4 {
+  color: #000;
+  font-size: 13px;
+  margin: 12px;
+}
+.category-sec {
+    margin-top: 10px;
+}
+.one-fifth-sec li span.img1 {
+  background: rgba(0, 0, 0, 0) url("../images/categories1.png") no-repeat scroll 11px 3px;
+  height: 115px;
+  padding: 0;
+}
+.one-fifth-sec li:hover span.img1, .one-fifth-sec li.acitve span.img1 {
+  background: rgba(0, 0, 0, 0) url("../images/categories1-hover.png") no-repeat scroll 11px 3px;
+  height: 115px;
+  padding: 0;
+}
+.one-fifth-sec.c-pop li:hover > h4
+{
+	color:#000;
+}
+
+.one-fifth-sec li span.img2 {
+  background: rgba(0, 0, 0, 0) url("../images/categories2.png") no-repeat scroll 11px 3px;
+  height: 115px;
+  padding: 0;
+}
+.one-fifth-sec li:hover span.img2, .one-fifth-sec li.active span.img2 {
+  background: rgba(0, 0, 0, 0) url("../images/categories2-hover.png") no-repeat scroll 11px 3px;
+  height: 115px;
+  padding: 0;
+}
+
+.one-fifth-sec li span.img3 {
+  background: rgba(0, 0, 0, 0) url("../images/categories3.png") no-repeat scroll 11px 3px;
+  height: 115px;
+  padding: 0;
+}
+.one-fifth-sec li:hover span.img3, .one-fifth-sec li.active span.img3 {
+  background: rgba(0, 0, 0, 0) url("../images/categories3-hover.png") no-repeat scroll 11px 3px;
+  height: 115px;
+  padding: 0;
+}
 
 
-/* ________________ New Page Ends ____________________________________ */
+.one-fifth-sec li span.img4 {
+  background: rgba(0, 0, 0, 0) url("../images/categories4.png") no-repeat scroll 11px 3px;
+  height: 115px;
+  padding: 0;
+}
+.one-fifth-sec li:hover span.img4, .one-fifth-sec li.active span.img4 {
+  background: rgba(0, 0, 0, 0) url("../images/categories4-hover.png") no-repeat scroll 11px 3px;
+  height: 115px;
+  padding: 0;
+}
+
+
+.one-fifth-sec li span.img5 {
+  background: rgba(0, 0, 0, 0) url("../images/categories5.png") no-repeat scroll 11px 3px;
+  height: 115px;
+  padding: 0;
+}
+.one-fifth-sec li:hover span.img5, .one-fifth-sec li.active span.img5 {
+  background: rgba(0, 0, 0, 0) url("../images/categories5-hover.png") no-repeat scroll 11px 3px;
+  height: 115px;
+  padding: 0;
+}
+
+
+.one-fifth-sec li span.img6 {
+  background: rgba(0, 0, 0, 0) url("../images/categories6.png") no-repeat scroll 11px 3px;
+  height: 115px;
+  padding: 0;
+}
+.one-fifth-sec li:hover span.img6, .one-fifth-sec li.active span.img6 {
+  background: rgba(0, 0, 0, 0) url("../images/categories6-hover.png") no-repeat scroll 11px 3px;
+  height: 115px;
+  padding: 0;
+}
+
+.one-fifth-sec li span.img7 {
+  background: rgba(0, 0, 0, 0) url("../images/categories7.png") no-repeat scroll 11px 3px;
+  height: 115px;
+  padding: 0;
+}
+.one-fifth-sec li:hover span.img7, .one-fifth-sec li.active span.img7 {
+  background: rgba(0, 0, 0, 0) url("../images/categories7-hover.png") no-repeat scroll 11px 3px;
+  height: 115px;
+  padding: 0;
+}
+
+.one-fifth-sec li span.img8 {
+  background: rgba(0, 0, 0, 0) url("../images/categories8.png") no-repeat scroll 11px 3px;
+  height: 115px;
+  padding: 0;
+}
+.one-fifth-sec li:hover span.img8, .one-fifth-sec li.active span.img8 {
+  background: rgba(0, 0, 0, 0) url("../images/categories8-hover.png") no-repeat scroll 11px 3px;
+  height: 115px;
+  padding: 0;
+}
+
+
+.one-fifth-sec li span.img9 {
+  background: rgba(0, 0, 0, 0) url("../images/categories9.png") no-repeat scroll 11px 3px;
+  height: 115px;
+  padding: 0;
+}
+.one-fifth-sec li:hover span.img9, .one-fifth-sec li.active span.img9 {
+  background: rgba(0, 0, 0, 0) url("../images/categories9-hover.png") no-repeat scroll 11px 3px;
+  height: 115px;
+  padding: 0;
+}
+
+
+.one-fifth-sec li span.img10 {
+  background: rgba(0, 0, 0, 0) url("../images/categories10.png") no-repeat scroll 11px 3px;
+  height: 115px;
+  padding: 0;
+}
+.one-fifth-sec li:hover span.img10, .one-fifth-sec li.active span.img10 {
+  background: rgba(0, 0, 0, 0) url("../images/categories10-hover.png") no-repeat scroll 11px 3px;
+  height: 115px;
+  padding: 0;
+}
+.next-btn {
+  background: transparent none repeat scroll 0 0;
+  border: 1px solid #d3d6d8;
+  border-radius: 0;
+  color: #666;
+  float: right;
+  margin-top: 16px;
+  padding: 10px 20px;
+  text-decoration:none;
+  text-transform: uppercase;
+}
+.next-btn:hover, .next-btn:focus {
+  background: #32363e;
+  border: 1px solid #32363e;
+  color: #fff;
+    text-decoration:none;
+}
+
+.previous-btn {
+  background: transparent none repeat scroll 0 0;
+  border: 1px solid #d3d6d8;
+  border-radius: 0;
+  color: #666;
+  float: left;
+  margin-top: 16px;
+  padding: 10px 20px;
+  text-decoration:none;
+  text-transform: uppercase;
+}
+.previous-btn:hover, .previous-btn:focus {
+  background: #32363e;
+  border: 1px solid #32363e;
+  color: #fff;
+    text-decoration:none;
+}
+
+.submit-btn {
+  background: #f26822;
+  border: 1px solid #f26822;
+  border-radius: 0;
+  color: #fff;
+  float: right;
+  margin-top: 16px;
+  padding: 10px 20px;
+  text-decoration:none;
+  text-transform: uppercase;
+}
+.submit-btn:hover, .submit-btn:focus {
+  background: #32363e;
+  border: 1px solid #32363e;
+  color: #fff;
+    text-decoration:none;
+}
+.frwd-btn {
+  float: left;
+  padding: 0 15px;
+  width: 100%;
+}
+.pTask_Mdl .modal-body .nav li.active::after {
+  background: rgba(0, 0, 0, 0) url("../images/active-arrow.png") no-repeat scroll 0 0;
+  bottom: -9px;
+  content: "";
+  height: 11px;
+  left: 15px;
+  position: absolute;
+  width: 180px;
+}
+
+.task-datail-sec {
+  min-height: 335px;
+}
+.address {
+  background: rgba(0, 0, 0, 0) url("../images/address.png") no-repeat scroll 98% center;
+}
+.address:hover {
+  background: rgba(0, 0, 0, 0) url("../images/address-hover.png") no-repeat scroll 98% center;
+}
+
+.cal {
+  background: rgba(0, 0, 0, 0) url("../images/cal.png") no-repeat scroll 98% center;
+}
+.cal:hover {
+  background: rgba(0, 0, 0, 0) url("../images/cal-hover.png") no-repeat scroll 98% center;
+}
+
+.pTask_Mdl .modal-footer {
+  border: medium none;
+  padding-bottom:0px;
+}
+
+
+.hide-sec
+{
+	display:none;
+}
+.hide-btn {
+  color: #666;
+}
+
+/* ________________ signin popup Ends ____________________________________ */
 
 
 
@@ -1042,7 +1642,29 @@ ul.one-sixth-sec.logo-sec li {
 	padding: 5px 10px;
 }
 .Tab-sec.cmn-tabs {
-    box-shadow: none;
+  box-shadow: none;
+  margin-bottom: 30px;
+}
+.modal-dialog.pTask_Mdl {
+  margin-left: 0;
+  margin-top: 65px;
+  padding: 0 15px;
+  width: 100%;
+}
+#collapse-myTab
+
+{
+	margin-bottom:0px;
+}
+.pTask_Mdl .modal-body .nav > li > a {
+  font-size: 13px;
+}
+.pTask_Mdl .modal-body .nav li.active::after {
+  width: 143px;
+}
+.pTask_Mdl .modal-body {
+  padding: 15px 15px 0;
+  position: relative;
 }
 }
 
@@ -1116,6 +1738,74 @@ ul.footer-links {
 .task-dtail > h1 {
 	margin: 0 0 5px;
 }
+ul.one-fifth-sec li {
+  width: 33.3%;
+}
+.one-fifth-sec li span.img1 {
+	background-position:center;
+}
+.one-fifth-sec li:hover span.img1, .one-fifth-sec li.active span.img1 {
+  	background-position:center;
+}
+.one-fifth-sec li span.img2 {
+  	background-position:center;
+}
+.one-fifth-sec li:hover span.img2, .one-fifth-sec li.active span.img2 {
+  	background-position:center;
+}
+.one-fifth-sec li span.img3 {
+	background-position:center;
+}
+.one-fifth-sec li:hover span.img3, .one-fifth-sec li.active span.img3 {
+	background-position:center;
+}
+.one-fifth-sec li span.img4 {
+	background-position:center;
+}
+.one-fifth-sec li:hover span.img4, .one-fifth-sec li.active span.img4 {
+	background-position:center;
+}
+.one-fifth-sec li span.img5 {
+	background-position:center;
+}
+.one-fifth-sec li:hover span.img5, .one-fifth-sec li.active span.img5 {
+	background-position:center;
+}
+
+
+.one-fifth-sec li span.img6 {
+	background-position:center;
+}
+.one-fifth-sec li:hover span.img6, .one-fifth-sec li.active span.img6 {
+	background-position:center;
+}
+.one-fifth-sec li span.img7 {
+	background-position:center;
+}
+.one-fifth-sec li:hover span.img7, .one-fifth-sec li.active span.img7 {
+	background-position:center;
+}
+.one-fifth-sec li span.img8 {
+	background-position:center;
+}
+.one-fifth-sec li:hover span.img8, .one-fifth-sec li.active span.img8 {
+	background-position:center;
+}
+.one-fifth-sec li span.img9 {
+	background-position:center;
+}
+.one-fifth-sec li:hover span.img9, .one-fifth-sec li.active span.img9 {
+	background-position:center;
+}
+.one-fifth-sec li span.img10 {
+	background-position:center;
+}
+.one-fifth-sec li:hover span.img10, .one-fifth-sec li.active span.img10 {
+	background-position:center;
+}
+
+
+
 }
 
 @media screen and (min-width: 640px) and (max-width: 710px) {
@@ -1159,6 +1849,10 @@ ul.one-fifth-sec li {
 }
 .smpl-txt-sec p {
 	font-size: 14px;
+}
+ul.one-fifth-sec li {
+  margin-bottom: 15px;
+  width: 50%;
 }
 }
 
@@ -1225,10 +1919,72 @@ ul.one-sixth-sec.logo-sec li {
 .footer p {
 	font-size: 13px;
 }
+.modal-dialog.mdl-sign {
+  margin: 113px auto;
+  padding: 0 15px;
+  width: 100%;
+}
+.modal-dialog.mdl-sign {
+  margin: 113px auto;
+  padding: 0 15px;
+  width: 100%;
+}
+.mdl-sign .modal-title {
+  float: left;
+  font-size: 30px;
+  margin: 41px 0 0;
+  text-align: center;
+  width: 100%;
+}
+ .remember {
+  width: 100%;
+}
+.ForgotPass {
+  float: left;
+ }
+ .orWith {
+  left: 28%;
+}
+ul.one-fifth-sec li {
+  margin-bottom: 15px;
+  width: 100%;
+}
+.mdl-sign .modal-title {
+  font-size: 20px;
+  margin: 33px 0 0;
+}
+
 }
 
 @media screen and (max-width: 360px) {
 .carousel-inner {
 	background: rgba(0, 0, 0, 0) url("../images/banner-01.jpg") no-repeat scroll -40px 0 / cover;
+}
+.modal-dialog.mdl-sign {
+  margin: 113px auto;
+  padding: 0 15px;
+  width: 100%;
+}
+.modal-dialog.mdl-sign {
+  margin: 113px auto;
+  padding: 0 15px;
+  width: 100%;
+}
+.mdl-sign .modal-title {
+  font-size: 30px;
+  margin: 33px 0 0;
+ }
+ .remember {
+  width: 100%;
+}
+.ForgotPass {
+  float: left;
+ }
+ .orWith {
+  left: 28%;
+}
+.mdl-sign .modal-title {
+  font-size: 20px;
+  margin: 33px 0 0;
 }
 }

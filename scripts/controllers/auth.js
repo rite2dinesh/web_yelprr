@@ -4,23 +4,29 @@ app.controller('AuthController', function($scope, $location, toaster, Auth) {
     $location.path('/');
   }
 
-	$scope.register = function(user) {          
+  $scope.register = function (user) {
+      $("#myModal1").modal('hide');
     Auth.register(user)
       .then(function() {
-        toaster.pop('success', "Registered successfully");
-        $location.path('/dashboard');
+          //toaster.pop('success', "Registered successfully");
+          alert("Registered successfully");
+        $location.path('/index');
       }, function(err) {
-        errMessage(err);
+          //errMessage(err);
+          alert(err);
       });
-  };
+	};
 
-	$scope.login = function(user) {
+	$scope.login = function (user) {
+	    $("#myModal").modal('hide');
      Auth.login(user)
       .then(function() {
-        toaster.pop('success', "Logged in successfully");
-        $location.path('/dashboard');
+          //toaster.pop('success', "Logged in successfully");
+          alert("Logged in successfully");
+        $location.path('/browse');
       }, function(err) {        
-        errMessage(err);
+          //errMessage(err);
+          alert(err);
       });    
 	};
 
